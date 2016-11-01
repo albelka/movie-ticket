@@ -1,30 +1,34 @@
-var Ticket = function(movie, ofAge, time){
+var Ticket = function(movie, time, ofAge, price){
   this.movieName = movie;
-  this.age = ofAge;
   this.time = time;
+  this.age = ofAge;
+  this.price = 15;
 }
 
 Ticket.prototype.ticketDetails = function(){
-  return this.movieName = "<br> " + this.time +  ".";
+  return this.movieName + " <br>at " + this.time;
 }
-//
-// if(Ticket.time === 4){
-//   var newPrice = price;
-// }
 
+Ticket.prototype.findPrice = function(){
+  if(this.age <= 13 && (this.movieName === "It Follows" || this.movieName === "Rocky Horror Picture Show")) {
+    alert("You can't watch these adult films yet youngster!");
+  } else if(this.age <= 13) {
+    return this.price - 11;
+    console.log(this.price - 11);
+  }
+}
 
 // User Interface
 $(document).ready(function(){
-  $().submit(function(event){
+  $("form.movies").submit(function(event){
     event.preventDefault();
     var movie = $("#movieSelect").val();
-    console.log(movie);
-    var times = parseInt($("#times").val());
+    var time = $("#time").val();
     var age = parseInt($("input#enterAge").val());
-    var newTicket = new Ticket(movie, times, age);
+    var newTicket = new Ticket(movie, time, age, price);
+    var price = newTicket.findPrice();
 console.log( newTicket);
-    $("ul#result").append("<li><span class='movie'>" + newTicket.ticketDetails() + "</span></li>");
-
+    $("ul#result").append("<li><span class='movie'>" + newTicket.ticketDetails() + "<br> your price is $" + price + "</span></li>");
 
 
   });
