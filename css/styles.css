@@ -1,0 +1,23 @@
+#behold {
+  display: none;
+  float: right;
+}
+#darth {
+  display: none;
+  float: right;
+}
+#follows {
+  display: none;
+  float: right;
+}
+#rocky {
+  display: none;
+  float: right;
+}
+
+body {
+  background-color: lightgrey;
+}
+ ul {
+   font-size: 18px;
+ }

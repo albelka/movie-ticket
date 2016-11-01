@@ -13,7 +13,8 @@
       <form class="movies">
         <div class="form-group">
           <label for="movieSelect">Select a movie:</label>
-          <select class="form-control" id="movieSelect">
+          <select class="form-control" id="movieSelect" placeholder="movie">
+            <option value="" selected disabled>Please select</option>
             <option>Lo and Behold</option>
             <option>It Follows</option>
             <option>Star Wars</option>
@@ -23,7 +24,8 @@
 
         <div class="form-group">
           <label for="times">Select a time:</label>
-          <select class="custom-select" id="time">
+          <select class="form-control" id="time" placeholder="time">
+            <option value="" selected disabled>Please select</option>
             <option value="2">2 pm</option>
             <option value="6">6 pm</option>
             <option value="9">9 pm</option>
@@ -33,13 +35,18 @@
 
         <div class="form-group">
           <label for="enterAge">Please enter your age</label>
-          <input class="form-control" id="enterAge"></input>
+          <input class="form-control" id="enterAge" placeholder="age"></input>
         </div>
 
-        <button type="submit" class="btn btn-success">Enter</button>
+        <button type="submit" class="btn btn-warning">Enter</button>
     </form>
 
     <h2>Here is your ticket:</h2>
+
+    <img id="behold" src="img/behold.jpeg" alt="A picture of lo and behold poster" />
+    <img id="darth" src="img/darth.jpeg" alt="A picture of darth vadar" />
+    <img id="follows" src="img/follows.jpeg" alt="A picture of a creepy lady" />
+    <img id="rocky" src="img/rocky.jpeg" alt="A picture of the lips" />
     <ul id="result"></ul>
     </div>
 
